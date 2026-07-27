@@ -11,9 +11,10 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
-      # Pinned just before the LVGL v9 image-descriptor rename (lv_img_dsc_t ->
-      # lv_image_dsc_t) on main, which is incompatible with the LVGL version
-      # bundled by the zmk v0.3 revision pinned above.
-      revision: a5ec2f99e9f7c37641e669d4a2d5faf54506d587
+      # Pinned before two regressions vs. zmk v0.3 (pinned above): the LVGL v9
+      # image-descriptor rename (lv_img_dsc_t -> lv_image_dsc_t) on main, and
+      # a5ec2f9 dropping the ${CMAKE_SOURCE_DIR}/include path from
+      # CMakeLists.txt (needed to find zmk/endpoints.h).
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
   self:
     path: config
