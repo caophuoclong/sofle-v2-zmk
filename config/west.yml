@@ -15,6 +15,6 @@ manifest:
       # zmk v0.3: the LVGL v9 image-descriptor rename on main, and a5ec2f9
       # dropping the ${CMAKE_SOURCE_DIR}/include path needed for
       # zmk/endpoints.h). Adds CONFIG_NICE_OLED_PERSISTENT_LAYER.
-      revision: 2cd3ea42aeebc585093a0d8bfdce5e8649d69846
+      revision: 8b93868bf61e6e21655a82b5671a43b9ab6b132b
   self:
     path: config
