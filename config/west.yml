@@ -11,6 +11,9 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
-      revision: main
+      # Pinned just before the LVGL v9 image-descriptor rename (lv_img_dsc_t ->
+      # lv_image_dsc_t) on main, which is incompatible with the LVGL version
+      # bundled by the zmk v0.3 revision pinned above.
+      revision: a5ec2f99e9f7c37641e669d4a2d5faf54506d587
   self:
     path: config
