@@ -11,10 +11,10 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
-      # Pinned before two regressions vs. zmk v0.3 (pinned above): the LVGL v9
-      # image-descriptor rename (lv_img_dsc_t -> lv_image_dsc_t) on main, and
-      # a5ec2f9 dropping the ${CMAKE_SOURCE_DIR}/include path from
-      # CMakeLists.txt (needed to find zmk/endpoints.h).
-      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
+      # Branch `persistent-layer`, based on 46f824a (before two regressions vs.
+      # zmk v0.3: the LVGL v9 image-descriptor rename on main, and a5ec2f9
+      # dropping the ${CMAKE_SOURCE_DIR}/include path needed for
+      # zmk/endpoints.h). Adds CONFIG_NICE_OLED_PERSISTENT_LAYER.
+      revision: 2cd3ea42aeebc585093a0d8bfdce5e8649d69846
   self:
     path: config
