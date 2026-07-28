@@ -12,7 +12,7 @@ manifest:
       # to live in the core since rgb_underglow.c keeps its pixel buffer and
       # effect list private. Rebase this branch on top of newer ZMK releases to
       # upgrade.
-      revision: cd5557b0512739ed226e84f7ca5144a585f83d84
+      revision: b5f1aecc4ea2e3daa6b00d60ba244130649b11f1
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
