@@ -28,6 +28,20 @@
         };
     };
 
+    // ADJUST normally needs LOWER and RAISE, both on the bottom row. Holding
+    // the two top-left keys together reaches it as well, so the underglow and
+    // bluetooth controls stay usable while that row is misbehaving.
+    combos {
+        compatible = "zmk,combos";
+
+        combo_adjust {
+            timeout-ms = <50>;
+            key-positions = <0 12>;
+            bindings = <&mo ADJUST>;
+            layers = <BASE>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
