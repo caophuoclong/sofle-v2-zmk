@@ -37,7 +37,11 @@
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <27>;
+        /* Temporarily 36 (the Sofle RGB maximum) so the LOCATE effect can walk
+         * past the real end of the chain and reveal how many LEDs are fitted.
+         * Setting this higher than reality is harmless - the surplus data has
+         * no LED left to latch it. Drop it to the real count once known. */
+        chain-length = <36>;
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
