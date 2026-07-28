@@ -1,6 +1,8 @@
 /*
  * RGB underglow (WS2812/SK6812) on the left half.
- * Data line is wired to pro_micro pin 6 (D6), which is P1.00 on nice_nano.
+ * Data line on pro_micro pin 1 (D1) = P0.06. It was on D6/P1.00, but that pin
+ * is also kscan row 1 (Q W E R T) - the SPI peripheral driving a pin the matrix
+ * reads as an input made key scanning unreliable.
  * Driven over spi3 (unused by this shield) with MOSI remapped to that pin.
  */
 
@@ -9,13 +11,13 @@
 &pinctrl {
     spi3_default: spi3_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 1, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
         };
     };
 
     spi3_sleep: spi3_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 1, 0)>;
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 6)>;
             low-power-enable;
         };
     };
