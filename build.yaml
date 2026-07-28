@@ -19,5 +19,12 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano_v2
     shield: sofle_right nice_oled
+  # Diagnostic build for the flaky bottom row: same keymap, but with the
+  # underglow and the display compiled out, so nothing custom touches a GPIO or
+  # the SPI bus. If a row still drops out on this, the cause is not the config.
+  - board: nice_nano_v2
+    shield: sofle_left
+    cmake-args: -DCONFIG_ZMK_RGB_UNDERGLOW=n -DCONFIG_ZMK_DISPLAY=n -DCONFIG_WS2812_STRIP=n
+    artifact-name: sofle_left_bare
   - board: nice_nano_v2
     shield: settings_reset
