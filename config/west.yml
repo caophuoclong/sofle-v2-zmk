@@ -12,7 +12,7 @@ manifest:
       # to live in the core since rgb_underglow.c keeps its pixel buffer and
       # effect list private. Rebase this branch on top of newer ZMK releases to
       # upgrade.
-      revision: b5f1aecc4ea2e3daa6b00d60ba244130649b11f1
+      revision: 3cdb4ebaf95955c429ffac4bdd8b02fd71e7a7a1
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
@@ -20,6 +20,6 @@ manifest:
       # zmk v0.3: the LVGL v9 image-descriptor rename on main, and a5ec2f9
       # dropping the ${CMAKE_SOURCE_DIR}/include path needed for
       # zmk/endpoints.h). Adds CONFIG_NICE_OLED_PERSISTENT_LAYER.
-      revision: e6211c5499699780a3735781212d716e29b0c599
+      revision: c0804648b6aa47fb80710608d07ec76111041674
   self:
     path: config
