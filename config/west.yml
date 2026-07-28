@@ -6,8 +6,13 @@ manifest:
       url-base: https://github.com/caophuoclong
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3
+      remote: caophuoclong
+      # Fork of zmkfirmware/zmk, branch `v0.3-extra-effects`: the v0.3 tag plus
+      # the chase/twinkle/fire/gradient/highlight underglow effects, which have
+      # to live in the core since rgb_underglow.c keeps its pixel buffer and
+      # effect list private. Rebase this branch on top of newer ZMK releases to
+      # upgrade.
+      revision: d573d7c1bafcf428831efcd12d19e43c11dd5056
       import: app/west.yml
     - name: zmk-nice-oled
       remote: caophuoclong
@@ -15,6 +20,6 @@ manifest:
       # zmk v0.3: the LVGL v9 image-descriptor rename on main, and a5ec2f9
       # dropping the ${CMAKE_SOURCE_DIR}/include path needed for
       # zmk/endpoints.h). Adds CONFIG_NICE_OLED_PERSISTENT_LAYER.
-      revision: b6fed0d34a7d61efc50c755865e6cc10ff2bdfa8
+      revision: d120bac7fb21c558f431d1b674f7682ce931dcdc
   self:
     path: config
